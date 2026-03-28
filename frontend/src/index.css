@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: #0f1117;
+    color: #e6edf3;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+textarea {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9 rem;
+}
