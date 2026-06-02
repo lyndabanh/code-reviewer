@@ -11,7 +11,10 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # todo: tighten this after MVP
+    allow_origins=[
+        "https://code-reviewer-production-605d.up.railway.app",
+        "http://localhost:5173"  #local dev
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )

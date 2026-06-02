@@ -9,8 +9,9 @@ export default function App() {
   const [error, setError] = useState(null)
 
   async function handleSubmit(e) {
-    e.preventDefault() // stops the browser from reloading the page
-    // by default, when an HTML form submits, the browser does a full page reload
+    // Stops the browser from reloading the page
+    // By default, when an HTML form submits, the browser does a full page reload
+    e.preventDefault()
 
     const code = e.target.code.value.trim()
     const language = e.target.language.value
@@ -21,7 +22,10 @@ export default function App() {
     setError(null)
 
     try {
-      const response = await fetch('/api/review', {
+      const apiBase = import.meta.env.VITE_API_URL || '';
+      // In dev, falls back to '' so fetch uses '/api/review', which Vite proxies to the backend
+      // In prod, uses the Railway backend URL set in VITE_API_URL
+      const response = await fetch(`${apiBase}/api/review`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code, language })
