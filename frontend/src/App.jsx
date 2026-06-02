@@ -11,7 +11,6 @@ export default function App() {
   async function handleSubmit(e) {
     e.preventDefault() // stops the browser from reloading the page
     // by default, when an HTML form submits, the browser does a full page reload
-    
 
     const code = e.target.code.value.trim()
     const language = e.target.language.value
